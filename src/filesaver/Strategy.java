@@ -1,13 +1,13 @@
 package filesaver;
 
 public interface Strategy {
-	String printSavingMethod();
+	String performSaving();
 }
 
 class SaveAsJpg implements Strategy {
 
 	@Override
-	public String printSavingMethod() {
+	public String performSaving() {
 		
 		return "I am saved as .jpg";
 	}
@@ -17,7 +17,7 @@ class SaveAsJpg implements Strategy {
 class SaveAsJava implements Strategy {
 
 	@Override
-	public String printSavingMethod() {
+	public String performSaving() {
 		
 		return "I am saved as .java";
 	}
@@ -26,7 +26,7 @@ class SaveAsJava implements Strategy {
 class SaveAsTxt implements Strategy {
 
 	@Override
-	public String printSavingMethod() {
+	public String performSaving() {
 		
 		return "I am saved as .txt";
 	}

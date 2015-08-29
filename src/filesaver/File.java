@@ -13,6 +13,6 @@ public class File {
 	}
 	
 	public String printSavingStrategy(){
-		return savingStrategy.printSavingMethod();
+		return savingStrategy.performSaving();
 	}
 }

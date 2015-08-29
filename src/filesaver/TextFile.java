@@ -4,7 +4,7 @@ public class TextFile extends File {
 
 	public TextFile(){
 		super();
-		this.savingStrategy = new SaveAsJava();
+		this.savingStrategy = new SaveAsTxt();
 	}
 
 }
