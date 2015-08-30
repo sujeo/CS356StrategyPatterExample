@@ -32,7 +32,6 @@ public class StrategyTester {
 		
 		textFile.setSavingStrategy(new SaveAsJpg());
 		System.out.println("textFile : " + textFile.printSavingStrategy());
-		System.out.println();
-		
+		System.out.println();	
 	}
 }

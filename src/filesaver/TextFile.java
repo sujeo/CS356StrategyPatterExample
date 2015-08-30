@@ -6,5 +6,4 @@ public class TextFile extends File {
 		super();
 		this.savingStrategy = new SaveAsTxt();
 	}
-
 }

@@ -11,7 +11,6 @@ class SaveAsJpg implements Strategy {
 		
 		return "I am saved as .jpg";
 	}
-	
 }
 
 class SaveAsJava implements Strategy {
