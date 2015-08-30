@@ -1,37 +1,44 @@
 package robot;
 
+import java.util.Scanner;
+
 public class RobotTester {
 
 
 
 	public static void main(String[] args) {
 
+		Scanner scanner = new Scanner(System.in);
+
 		Robot r1 = new Robot("Big Robot");
-		Robot r2 = new Robot("George v.2.1");
-		Robot r3 = new Robot("R2");
+		//		Robot r2 = new Robot("George v.2.1");
+		//		Robot r3 = new Robot("R2");
 
-		r1.setBehaviour(new AgressiveBehaviour());
-		r2.setBehaviour(new DefensiveBehaviour());
-		r3.setBehaviour(new NormalBehaviour());
+		int selected;
+		
+		for (int i=0; i<3; i++){
+			
+			System.out.println("\nSelect Behaviour:"
+					+ "\n1. Agreesive"
+					+ "\n2. Defensive"
+					+ "\n3. Normal");
 
-		r1.move();
-		r2.move();
-		r3.move();
+			selected = scanner.nextInt();
 
-		System.out.println("\r\nNew behaviours: " +
-				"\r\n\t'Big Robot' gets really scared" +
-				"\r\n\t, 'George v.2.1' becomes really mad because" +
-				"it's always attacked by other robots" +
-				"\r\n\t and R2 keeps its calm\r\n");
-
-		r1.setBehaviour(new DefensiveBehaviour());
-		r2.setBehaviour(new AgressiveBehaviour());
-
-		r1.move();
-		r2.move();
-		r3.move();
+			if (selected == 1) {
+				r1.setBehaviour(new AgressiveBehaviour());
+			} else
+				if (selected == 2) {
+					r1.setBehaviour(new DefensiveBehaviour());
+				} else 
+					if (selected == 3) {
+						r1.setBehaviour(new NormalBehaviour());
+					} 
+					
+			r1.move();
+			
+		}
+				
 	}
-
-
 
 }
