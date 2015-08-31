@@ -1,0 +1,56 @@
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public interface IBehaviour {
+
+	public int moveCommand();
+	}
+
+	class AgressiveBehaviour implements IBehaviour{
+		JFrame frame;
+
+		public AgressiveBehaviour(JFrame frame){
+			this.frame = frame;
+		}
+		
+		public int moveCommand()
+		{
+			String info = "Agressive Behaviour: if find another robot attack it";
+			
+			
+			JOptionPane.showMessageDialog(frame,info,"Robot's Behaivour",
+					JOptionPane.PLAIN_MESSAGE);
+
+			
+			System.out.println("\tAgressive Behaviour: if find another robot attack it");
+			
+			return 1;
+		}
+	}
+
+	class DefensiveBehaviour implements IBehaviour{
+		JFrame frame;
+		public DefensiveBehaviour(JFrame frame){
+			this.frame = frame;
+		}
+		public int moveCommand()
+		{
+			String info ="Defensive Behaviour: if find another robot run from it";
+			System.out.println("\tDefensive Behaviour: if find another robot run from it");
+			return -1;
+		}
+	}
+
+	class NormalBehaviour implements IBehaviour{
+		JFrame frame;
+		public NormalBehaviour(JFrame frame){
+			this.frame = frame;
+		}
+		public int moveCommand()
+		{
+			String info = "Normal Behaviour: if find another robot ignore it";
+			System.out.println("\tNormal Behaviour: if find another robot ignore it");
+			return 0;
+		}
+
+}

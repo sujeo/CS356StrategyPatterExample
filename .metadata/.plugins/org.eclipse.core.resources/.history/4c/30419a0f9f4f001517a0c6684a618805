@@ -1,0 +1,138 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.FlowLayout;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
+
+public class RobotDriver {
+
+	private JFrame frame;
+	private JPanel mainPanel;
+	private JPanel topPanel;
+	private JPanel buttonPanel;
+	private JButton agreesiveBtn;
+	private JButton defensiveBtn;
+	private JButton normalBtn;
+	private JLabel titleLabel;
+
+	
+	/**
+	 * Create the application.
+	 */
+	public RobotDriver() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		
+		int btnXsize = 105;
+		int btnYsize = 50;
+		
+//		
+//		Robot r1 = new Robot("Big Robot");
+//		r1.setBehaviour(new AgressiveBehaviour());
+//		r1.setBehaviour(new DefensiveBehaviour());
+//		r1.setBehaviour(new NormalBehaviour());
+
+		frame = new JFrame();
+		frame.setSize(400,450);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLocationRelativeTo(null);
+		frame.setTitle("CS356");
+		
+		
+		mainPanel = new JPanel(new FlowLayout());
+		mainPanel.setBackground(Color.DARK_GRAY);
+		mainPanel.setBorder(new LineBorder(new Color(0, 0, 0), 10));
+
+//		BoxLayout boxLayout= new BoxLayout(mainPanel, BoxLayout.Y_AXIS);  
+		frame.getContentPane().add(mainPanel);
+		
+		
+		topPanel = new JPanel();
+//		topPanel.setSize(400,100);
+		topPanel.setBackground(Color.CYAN);
+
+		topPanel.setBorder(new LineBorder(new Color(0, 0, 0), 10));
+		
+		titleLabel = new JLabel("Bid Rogot");
+		topPanel.add(titleLabel);
+//		topPanel.setAlignmentY(Component.TOP_ALIGNMENT);
+		mainPanel.add(topPanel);
+		
+		
+		
+		
+		buttonPanel = new JPanel(new FlowLayout());
+		BoxLayout boxLayout= new BoxLayout(buttonPanel, BoxLayout.Y_AXIS);  
+
+//		buttonPanel.setBackground(Color.CYAN);
+
+		buttonPanel.setBorder(new LineBorder(new Color(0, 0, 0), 10));
+		
+		agreesiveBtn = new JButton();
+		agreesiveBtn.setForeground(Color.RED);
+		defensiveBtn = new JButton();
+		normalBtn = new JButton();
+		
+		agreesiveBtn.setSize(new Dimension(btnXsize, btnYsize));
+		defensiveBtn.setSize(new Dimension(btnXsize, btnYsize));
+		normalBtn.setSize(new Dimension(btnXsize, btnYsize));
+
+		agreesiveBtn.setText("Agreesive");
+		defensiveBtn.setText("Defensive");
+		normalBtn.setText("Normal");
+		
+		
+		buttonPanel.add(agreesiveBtn);
+		buttonPanel.add(defensiveBtn);
+		buttonPanel.add(normalBtn);
+		
+		
+		
+		buttonPanel.setAlignmentY(Component.TOP_ALIGNMENT);
+		mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					RobotDriver window = new RobotDriver();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+
+}
